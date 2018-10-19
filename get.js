@@ -8,7 +8,7 @@ const get = (obj, path, options) => {
   const { string } = options || { string: false };
 
   return path.reduce(
-    (o, key) => (o && o[key] ? o[key] : string ? "" : null),
+    (o, key) => (o && o[key] != null ? o[key] : string ? "" : null),
     obj
   );
 };
